@@ -8,10 +8,11 @@ class Lda_Operator:
     def trainLDAModel(self, corpus_mm, dictionary, dimensions, update, chunks, epochs):
         lda_model = LdaModel(corpus=corpus_mm, id2word=dictionary, num_topics=dimensions,
                              update_every=update, chunksize=chunks, passes=epochs)
+        # lda_model.save('LDA_Model.model')
         return lda_model
 
     # creates a a file (one-doc-line) based on features from LDA model with label
-    def documentVector(self, input_corpus, output_docvec, lda_model, dic):
+    def ldaDocVector(self, input_corpus, output_docvec, lda_model, dic):
         text_parser = TextParser()
         DELIMITER = '#'
         vector_corpus = open(output_docvec, 'w+')
@@ -23,6 +24,7 @@ class Lda_Operator:
             doc_representation = feature_values+label
             vector_corpus.write(doc_representation)
         vector_corpus.close()
+        print('SUCCESS: LDA to Vector completed')
 
     # parse list of words into list vectors
     def __documentToLDA(self, words, lda_model, dic):

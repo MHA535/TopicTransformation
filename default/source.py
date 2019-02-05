@@ -40,20 +40,21 @@ if __name__ == '__main__':
         corpus_mm = tp.loadMMCorpus(corpus_path)
 
     # Train LDA phase - Parameters
-    document = "A survey of user opinion of computer system response time"
     lda_operator = Lda_Operator()
     dimensions = 10
     update = 1
     chunks = 2
     epochs = 1
 
-    # overall runtime start
-    start_time = time.monotonic()
+    # LDA Model Train
+    start_time = time.monotonic()  # overall runtime start
     lda_model = lda_operator.trainLDAModel(corpus_mm, dic, dimensions, update, chunks, epochs)
     print('LDA Model built in %s' % (timedelta(seconds=time.monotonic() - start_time)))
 
     # Building Bulk file in <1-doc-line,label>
-    lda_operator.documentVector(params.document_read, params.document_write, lda_model, dic)
+    doc_read = os.path.join(ppydir_name, params.document_read)
+    doc_write = os.path.join(ppydir_name, params.document_write)
+    lda_operator.ldaDocVector(doc_read, doc_write, lda_model, dic)
 
     # doc_bow = dic.doc2bow(document.split())
     # doc_lda = lda_model[doc_bow]
@@ -63,7 +64,12 @@ if __name__ == '__main__':
     # print('Value: ', v, type(v))
     # print('DOC_LDA: ', doc_lda)
 
-
+    '''
+    Command execution example
+    python3 default/source.py --input files/input/te
+    st.txt --train False --output files/output/test.d 
+    --corpus files/output/test_corpus.mm --docr files/input/doclabel.txt --docw files/output/doclabel_vec.txt
+    '''
 
 
 
