@@ -11,3 +11,13 @@ class FileManipulation:
                 file_uri = os.path.join(roots, file)
                 if file_uri.endswith('txt'): input_file_list.append(file_uri)
         return input_file_list
+
+    def read(self, file_name):
+        text = ""
+        try:
+            f = open(file_name, errors="ignore")
+            text = f.read()
+            f.close()
+        except IOError as exc:
+            raise ("problem reading file: " + file_name)
+        return text
