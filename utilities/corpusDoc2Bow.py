@@ -1,6 +1,4 @@
-from gensim import corpora
 from utilities.textProcessing import TextParser
-from utilities.commandLine import CommandLine
 
 
 class MyCorpus(object):
@@ -10,6 +8,7 @@ class MyCorpus(object):
         self.dictionary = dictionary
     # input_file has to be in one-document per line format
 
+    # iterator to transform doc2bow
     def __iter__(self):
         text_parser = TextParser()
         for line in open(self.input_file, 'r', encoding='utf-8'):

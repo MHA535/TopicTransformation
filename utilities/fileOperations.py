@@ -12,6 +12,7 @@ class FileManipulation:
                 if file_uri.endswith('txt'): input_file_list.append(file_uri)
         return input_file_list
 
+    # reads an entire file and returns its text
     def read(self, file_name):
         text = ""
         try:

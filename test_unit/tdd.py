@@ -12,3 +12,4 @@ class TestTopicTransformation(unittest.TestCase):
     def test_read_file(self):
         fm = FileManipulation()
         self.assertEqual('I am a file', fm.read('file_01.txt'))
+
