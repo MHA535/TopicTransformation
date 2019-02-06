@@ -15,20 +15,25 @@ sys.path.append(os.path.join(os.path.dirname(__file__), os.path.pardir))
 # local-imports
 from utilities.commandLine import CommandLine
 from utilities.textProcessing import TextParser
+from utilities.fileOperations import FileManipulation
 from utilities.corpusDoc2Bow import MyCorpus
-from utilities.ldaTools import Lda_Operator
+from utilities.ldaTools import LdaOperator
 
 # logging
 # logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 if __name__ == '__main__':
     params = CommandLine()  # command line parameter validation
-    tp = TextParser()
+    tp = TextParser()  # text operations
+    fm = FileManipulation()  # file operations
+    lda_operator = LdaOperator()
 
-    # selecting type of execution
-    dict_flag = params.save_dict
+    # Execution selection
+    dict_flag = params.tr_flag
     in_fname = os.path.join(ppydir_name, params.input_folder)
     ou_fname = os.path.join(ppydir_name, params.output_folder)
+    lda_flag = params.lda_flag
+    lda_file = os.path.join(ppydir_name, params.lda_model)
 
     if dict_flag:  # Save dictionary and MM
         dic = tp.createDictionary(in_fname, ou_fname)
@@ -39,37 +44,38 @@ if __name__ == '__main__':
         dic = tp.loadDictionary(ou_fname)
         corpus_mm = tp.loadMMCorpus(corpus_path)
 
-    # Train LDA phase - Parameters
-    lda_operator = Lda_Operator()
-    dimensions = 10
-    update = 1
-    chunks = 2
-    epochs = 1
+    # LDA - Step
+    if lda_flag:  # LDA Model Train
+        dimensions = 10
+        update = 1
+        chunks = 2
+        epochs = 1
+        random = 1
+        min_prob = 0.0  # if default value is used (0.1), topics < min_prob are not presented
 
-    # LDA Model Train
-    start_time = time.monotonic()  # overall runtime start
-    lda_model = lda_operator.trainLDAModel(corpus_mm, dic, dimensions, update, chunks, epochs)
-    print('LDA Model built in %s' % (timedelta(seconds=time.monotonic() - start_time)))
+        start_time = time.monotonic()  # overall runtime start
+        lda_model = lda_operator.trainLDAModel(corpus_mm, dic, dimensions, update, chunks, epochs, random, min_prob)
+        print('LDA Model built in %s' % (timedelta(seconds=time.monotonic() - start_time)))
+        lda_operator.saveLDAModel(lda_model, lda_file)
+    else:  # LDA Model Load
+        lda_model = lda_operator.loadLDAModel(lda_file)
 
-    # Building Bulk file in <1-doc-line,label>
+    # Apply LDA on Documents - Either from Produced/Loaded LDA Model/Dictionary
     doc_read = os.path.join(ppydir_name, params.document_read)
     doc_write = os.path.join(ppydir_name, params.document_write)
-    lda_operator.ldaDocVector(doc_read, doc_write, lda_model, dic)
+    doc_list = fm.doclist_multifolder(doc_read)
+    lda_operator.ldaDocVector(doc_list, doc_write, lda_model, dic)
 
-    # doc_bow = dic.doc2bow(document.split())
-    # doc_lda = lda_model[doc_bow]
-    # print('DOC_LDA-TYPE: ', type(doc_lda[0]))
-    # f, v = doc_lda[0]
-    # print('Feature: ', f, type(f))
-    # print('Value: ', v, type(v))
-    # print('DOC_LDA: ', doc_lda)
+
 
     '''
-    Command execution example
-    python3 default/source.py --input files/input/te
-    st.txt --train False --output files/output/test.d 
-    --corpus files/output/test_corpus.mm --docr files/input/doclabel.txt --docw files/output/doclabel_vec.txt
+    Command execution examples
+    TRUE - Produce Dictionary, MM and LDA Model
+    python3 default/source.py --input files/input/test.txt --train True --output files/output/test.d --corpus files/output/test_corpus.mm --lda True --ldam files/output/lda_m.model  --docr files/train --docw files/output/result.txt
+    FALSE - Load Dictionary, MM and LDA Mode
+    python3 default/source.py --input files/input/test.txt --train False --output files/output/test.d --corpus files/output/test_corpus.mm --lda False --ldam files/output/lda_m.model  --docr files/train --docw files/output/result.txt
     '''
+
 
 
 

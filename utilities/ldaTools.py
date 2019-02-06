@@ -1,27 +1,31 @@
 from gensim.models.ldamodel import LdaModel
 from utilities.textProcessing import TextParser
+from utilities.fileOperations import FileManipulation
+import os
 
 
-class Lda_Operator:
+class LdaOperator:
 
     # trains a lda model
-    def trainLDAModel(self, corpus_mm, dictionary, dimensions, update, chunks, epochs):
+    def trainLDAModel(self, corpus_mm, dictionary, dimensions, update, chunks, epochs, random=None, min_prob=0.01):
         lda_model = LdaModel(corpus=corpus_mm, id2word=dictionary, num_topics=dimensions,
-                             update_every=update, chunksize=chunks, passes=epochs)
-        # lda_model.save('LDA_Model.model')
+                             update_every=update, chunksize=chunks, passes=epochs, random_state=random, minimum_probability=min_prob)
         return lda_model
 
     # creates a a file (one-doc-line) based on features from LDA model with label
     def ldaDocVector(self, input_corpus, output_docvec, lda_model, dic):
         text_parser = TextParser()
-        DELIMITER = '#'
+        file_manip = FileManipulation()
+        SEPARATOR = os.sep  # / for Linux; \\ dor Windows
+        SUB_DIR = -2  # position of the subdirectory folder (class name)
         vector_corpus = open(output_docvec, 'w+')
-        for line in open(input_corpus, 'r', encoding='utf-8'):
-            text, label = str(line).split(DELIMITER)
-            words = text_parser.tokenizeWords(text)
-            words = text_parser.removeStopWords(words)
+        for file in input_corpus:
+            text = file_manip.readFile(file)
+            file_path = file.split(SEPARATOR)
+            label = file_path[SUB_DIR]
+            words = text_parser.cleanText(text)
             feature_values = self.__documentToLDA(words, lda_model, dic)
-            doc_representation = feature_values+label
+            doc_representation = feature_values+label+'\n'
             vector_corpus.write(doc_representation)
         vector_corpus.close()
         print('SUCCESS: LDA to Vector completed')
@@ -38,9 +42,31 @@ class Lda_Operator:
 
     # Extracts the Values for each feature obtained by the LDA_Model
     def __ldaVectorHandler(self, lda_doc):
-        feature_values=''
-        DELIMITER = ','
+        feature_values = ''
+        SEPARATOR = ','
         for item in lda_doc:
             feat, val = item
-            feature_values += str(val)+DELIMITER
+            feature_values += str(val)+SEPARATOR
         return feature_values
+
+    # Save LDA model
+    def saveLDAModel(self, lda_model, lda_name):
+        try:
+            lda_model.save(lda_name)
+            print('LDA Model saved: %s' % lda_name)
+        except IOError:
+            print('ERROR: Cannot save LDA Model: %s' % lda_name)
+            exit()
+
+    # loads LDA model
+    def loadLDAModel(self, lda_name):
+        try:
+            lda_model = LdaModel.load(lda_name)
+            print('LDA Model loaded: %s' % lda_name)
+            return lda_model
+        except IOError:
+            print('ERROR: Cannot Load LDA Model: %s' % lda_name)
+            exit()
+
+
+

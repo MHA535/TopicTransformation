@@ -13,12 +13,12 @@ class FileManipulation:
         return input_file_list
 
     # reads an entire file and returns its text
-    def read(self, file_name):
+    def readFile(self, file_name):
         text = ""
         try:
             f = open(file_name, errors="ignore")
             text = f.read()
             f.close()
         except IOError as exc:
-            raise ("problem reading file: " + file_name)
+            raise ("FAILED: Problem reading file: " + file_name)
         return text

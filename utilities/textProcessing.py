@@ -20,13 +20,19 @@ class TextParser:
 
     # removes stopwords from list of words
     def removeStopWords(self, words):
-        clean_words = [w for w in words if w not in stopWords]
-        return clean_words
+        words = [w for w in words if w not in stopWords]
+        return words
 
     # returns tokenized words
     def tokenizeWords(self, words_str):
         words = str(words_str.lower())
         return tokenizer.tokenize(words)
+
+    # consolidates all pre-processing for words
+    def cleanText(self, words):
+        parsed_words = self.tokenizeWords(words)
+        parsed_words = self.removeStopWords(parsed_words)
+        return parsed_words
 
     # creates a dictionary of words in a document - one at a time
     def createDictionary(self, input_file, output_file):
@@ -45,15 +51,17 @@ class TextParser:
             print('SUCCESS: Corpus %s in MM format saved' % corpus_name)
         except IOError:
             print('IO ERROR: Cannot save corpus %s' % corpus_name)
+            exit()
 
     # Loads corppus in MM format
     def loadMMCorpus(self, corpus_path):
         try:
             corpus_mm = corpora.mmcorpus.MmCorpus(corpus_path)
             print('SUCCESS: Load MM Corpus %s' % corpus_path)
+            return corpus_mm
         except IOError:
             print('ERROR: Cannot load %s MM format' % corpus_path)
-        return corpus_mm
+            exit()
 
     # test dictionary
     def playDic(self, dictionary, texts):
@@ -64,20 +72,21 @@ class TextParser:
     def saveDictionary(self, dictionary, output_file):
         try:
             dictionary.save(output_file)
-            print('Dictionary: ', dictionary.token2id)
+            # print('Dictionary: ', dictionary.token2id)
             print('SUCCESS: Dictionary %s in .d format saved' % output_file)
         except IOError:
             print('IO ERROR: Cannot save dictionary %s' % output_file)
+            exit()
 
     # loads dictionary (id2word)
     def loadDictionary(self, dict_path):
         try:
             dic = corpora.Dictionary.load(dict_path)
             print('SUCCESS: Load dictionary %s' % dict_path)
-            # print('#Dictionary# ', dic.token2id)
+            return dic
         except IOError:
             print('ERROR: Cannot load dictionary %s' % dict_path)
-        return dic
+            exit()
 
     # creates a dictionary with word frequency of corpus
     def frequencyCounter(self, input_file):
@@ -89,7 +98,7 @@ class TextParser:
                 frequency_words[word] += 1
         return frequency_words
 
-        # creates a dictionary of words in a document - one at a time
+    # creates a dictionary of words in a document - one at a time
     def removeWordCount(self, words, cutoff):
         clean_frequency = dict()
         for key, value in words.items():
