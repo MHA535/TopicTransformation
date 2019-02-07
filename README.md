@@ -34,6 +34,7 @@ Composed by two parts: Train/Load LDA model and Use LDA model to obtain document
  `--ldau` - [True] Uses/Apply LDA model in documents from `--docr`. [False] Does not apply LDA model, exits the program
  
  `--docr` - Folder containing documents to apply LDA model. Classes for the documents are the sub-directory name
+ 
  `--docw` - Folder where translated documents are saved using csv format. One document per line in one single file,
  topics,dimensions separated by comma. Last feature is the class/label of the document. This format is useful for ML models.
 

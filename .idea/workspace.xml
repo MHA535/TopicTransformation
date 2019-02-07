@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="869457c2-b8f0-4b51-8725-476d3de36a25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default/source.py" beforeDir="false" afterPath="$PROJECT_DIR$/default/source.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/output/lda_m.model" beforeDir="false" afterPath="$PROJECT_DIR$/files/output/lda_m.model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/output/lda_m.model.id2word" beforeDir="false" afterPath="$PROJECT_DIR$/files/output/lda_m.model.id2word" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/output/lda_m.model.state" beforeDir="false" afterPath="$PROJECT_DIR$/files/output/lda_m.model.state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/output/resultb.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/output/test.d" beforeDir="false" afterPath="$PROJECT_DIR$/files/output/test.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/commandLine.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/commandLine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/ldaTools.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/ldaTools.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,9 +57,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="390">
-                <caret line="25" column="91" lean-forward="true" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="649">
+                <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
               </first_editor>
               <second_editor />
             </state>
@@ -138,10 +129,10 @@
         <option value="$PROJECT_DIR$/test_unit/tdd.py" />
         <option value="$PROJECT_DIR$/utilities/textProcessing.py" />
         <option value="$PROJECT_DIR$/test_unit/testReading.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/utilities/commandLine.py" />
         <option value="$PROJECT_DIR$/utilities/ldaTools.py" />
         <option value="$PROJECT_DIR$/default/source.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -314,7 +305,7 @@
       <workItem from="1549390291284" duration="15731000" />
       <workItem from="1549464110163" duration="4011000" />
       <workItem from="1549473050704" duration="13387000" />
-      <workItem from="1549552113177" duration="4822000" />
+      <workItem from="1549552113177" duration="5212000" />
     </task>
     <servers />
   </component>
@@ -351,7 +342,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61069000" />
+    <option name="totallyTimeSpent" value="61459000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -500,9 +491,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="390">
-            <caret line="25" column="91" lean-forward="true" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="649">
+            <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
           </first_editor>
           <second_editor />
         </state>
