@@ -53,7 +53,7 @@ class LdaOperator:
     def saveLDAModel(self, lda_model, lda_name):
         try:
             lda_model.save(lda_name)
-            print('LDA Model saved: %s' % lda_name)
+            print('SUCCESS: LDA Model saved: %s' % lda_name)
         except IOError:
             print('ERROR: Cannot save LDA Model: %s' % lda_name)
             exit()
@@ -62,7 +62,7 @@ class LdaOperator:
     def loadLDAModel(self, lda_name):
         try:
             lda_model = LdaModel.load(lda_name)
-            print('LDA Model loaded: %s' % lda_name)
+            print('SUCCESS: LDA Model loaded: %s' % lda_name)
             return lda_model
         except IOError:
             print('ERROR: Cannot Load LDA Model: %s' % lda_name)

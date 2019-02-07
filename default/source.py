@@ -34,6 +34,7 @@ if __name__ == '__main__':
     ou_fname = os.path.join(ppydir_name, params.output_folder)
     lda_flag = params.lda_flag
     lda_file = os.path.join(ppydir_name, params.lda_model)
+    lda_usage = params.lda_use
 
     if dict_flag:  # Save dictionary and MM
         dic = tp.createDictionary(in_fname, ou_fname)
@@ -55,27 +56,21 @@ if __name__ == '__main__':
 
         start_time = time.monotonic()  # overall runtime start
         lda_model = lda_operator.trainLDAModel(corpus_mm, dic, dimensions, update, chunks, epochs, random, min_prob)
-        print('LDA Model built in %s' % (timedelta(seconds=time.monotonic() - start_time)))
+        print('SUCCESS: LDA Model built in %s' % (timedelta(seconds=time.monotonic() - start_time)))
         lda_operator.saveLDAModel(lda_model, lda_file)
     else:  # LDA Model Load
         lda_model = lda_operator.loadLDAModel(lda_file)
 
-    # Apply LDA on Documents - Either from Produced/Loaded LDA Model/Dictionary
-    doc_read = os.path.join(ppydir_name, params.document_read)
-    doc_write = os.path.join(ppydir_name, params.document_write)
-    doc_list = fm.doclist_multifolder(doc_read)
-    lda_operator.ldaDocVector(doc_list, doc_write, lda_model, dic)
-
-
-
-    '''
-    Command execution examples
-    TRUE - Produce Dictionary, MM and LDA Model
-    python3 default/source.py --input files/input/test.txt --train True --output files/output/test.d --corpus files/output/test_corpus.mm --lda True --ldam files/output/lda_m.model  --docr files/train --docw files/output/result.txt
-    FALSE - Load Dictionary, MM and LDA Mode
-    python3 default/source.py --input files/input/test.txt --train False --output files/output/test.d --corpus files/output/test_corpus.mm --lda False --ldam files/output/lda_m.model  --docr files/train --docw files/output/result.txt
-    '''
-
+    # Apply LDA
+    if lda_usage:  # Either from Produced/Loaded LDA Model/Dictionary
+        print('Applying LDA to (Un)seen documents')
+        doc_read = os.path.join(ppydir_name, params.document_read)
+        doc_write = os.path.join(ppydir_name, params.document_write)
+        doc_list = fm.doclist_multifolder(doc_read)
+        lda_operator.ldaDocVector(doc_list, doc_write, lda_model, dic)
+    else:
+        print('LDA - Not applied. Exiting program')
+        exit()
 
 
 

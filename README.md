@@ -12,15 +12,11 @@ Composed by two parts: Train/Load LDA model and Use LDA model to obtain document
  #### Command execution examples
 
     # Train/Save - Produce Dictionary, MM and LDA Model
-    python3 default/source.py --input files/input/test.txt --train True --output files/output/test.d 
-    --mmf files/output/test_corpus.mm --lda True --ldam files/output/lda_m.model  --docr files/train 
-    --docw files/output/result.txt
+    python3 default/source.py --input files/input/test.txt --train True --output files/output/test.d --mmf files/output/test_corpus.mm --lda True --ldam files/output/lda_m.model --ldau True --docr files/train --docw files/output/result.txt
     
     # Load - Dictionary, MM and LDA Model
-    python3 default/source.py --input files/input/test.txt --train False --output files/output/test.d 
-    --mmf files/output/test_corpus.mm --lda False --ldam files/output/lda_m.model  --docr files/train 
-    --docw files/output/result.txt
- 
+    python3 default/source.py --input files/input/test.txt --train False --output files/output/test.d --mmf files/output/test_corpus.mm --lda False --ldam files/output/lda_m.model --ldau False --docr files/train --docw files/output/result.txt
+    
  `--train` - [True] It will produce Dictionary (based on corpus from input) and its Matrix Market format (MM).
  [False] Loads both of them
 
@@ -35,8 +31,7 @@ Composed by two parts: Train/Load LDA model and Use LDA model to obtain document
            
  `--ldm` - Saves (`lda = True`) or Load (`lda = True`) LDA model
  
- `--ldau` - [True] Uses/Apply LDA model in documents from `--docr`.
- [False] Does not apply LDA model, exits the program
+ `--ldau` - [True] Uses/Apply LDA model in documents from `--docr`. [False] Does not apply LDA model, exits the program
  
  `--docr` - Folder containing documents to apply LDA model. Classes for the documents are the sub-directory name
  `--docw` - Folder where translated documents are saved using csv format. One document per line in one single file,
