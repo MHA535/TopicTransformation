@@ -20,7 +20,7 @@ from utilities.corpusDoc2Bow import MyCorpus
 from utilities.ldaTools import LdaOperator
 
 # logging
-# logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 if __name__ == '__main__':
     params = CommandLine()  # command line parameter validation
@@ -47,15 +47,18 @@ if __name__ == '__main__':
 
     # LDA - Step
     if lda_flag:  # LDA Model Train
-        dimensions = 10
+        dimensions = 300
         update = 1
-        chunks = 2
+        chunks = 10000
         epochs = 1
         random = 1
         min_prob = 0.0  # if default value is used (0.1), topics < min_prob are not presented
+        multi_core = True  # single or multiple cores LDA
+        worker_num = 4  # if running multicore set number of cores
 
         start_time = time.monotonic()  # overall runtime start
-        lda_model = lda_operator.trainLDAModel(corpus_mm, dic, dimensions, update, chunks, epochs, random, min_prob)
+        lda_model = lda_operator.trainLDAModel(corpus_mm, dic, dimensions, update, chunks, epochs, random, min_prob,
+                                               multi_core, worker_num)
         print('SUCCESS: LDA Model built in %s' % (timedelta(seconds=time.monotonic() - start_time)))
         lda_operator.saveLDAModel(lda_model, lda_file)
     else:  # LDA Model Load
@@ -71,6 +74,3 @@ if __name__ == '__main__':
     else:
         print('LDA - Not applied. Exiting program')
         exit()
-
-
-

@@ -1,4 +1,5 @@
 from gensim.models.ldamodel import LdaModel
+from gensim.models.ldamulticore import LdaMulticore
 from utilities.textProcessing import TextParser
 from utilities.fileOperations import FileManipulation
 import os
@@ -7,9 +8,16 @@ import os
 class LdaOperator:
 
     # trains a lda model
-    def trainLDAModel(self, corpus_mm, dictionary, dimensions, update, chunks, epochs, random=None, min_prob=0.01):
-        lda_model = LdaModel(corpus=corpus_mm, id2word=dictionary, num_topics=dimensions,
-                             update_every=update, chunksize=chunks, passes=epochs, random_state=random, minimum_probability=min_prob)
+    def trainLDAModel(self, corpus_mm, dictionary, dimensions, update, chunks, epochs, random=None, min_prob=0.01,
+                      multi_core=True, worker_num=4):
+        if multi_core:
+            lda_model = LdaMulticore(corpus=corpus_mm, id2word=dictionary, num_topics=dimensions,
+                                     update_every=update, chunksize=chunks, passes=epochs, random_state=random,
+                                     minimum_probability=min_prob, workers=worker_num)
+        else:
+            lda_model = LdaModel(corpus=corpus_mm, id2word=dictionary, num_topics=dimensions,
+                                 update_every=update, chunksize=chunks, passes=epochs, random_state=random,
+                                 minimum_probability=min_prob)
         return lda_model
 
     # creates a a file (one-doc-line) based on features from LDA model with label
@@ -25,7 +33,7 @@ class LdaOperator:
             label = file_path[SUB_DIR]
             words = text_parser.cleanText(text)
             feature_values = self.__documentToLDA(words, lda_model, dic)
-            doc_representation = feature_values+label+'\n'
+            doc_representation = feature_values + label + '\n'
             vector_corpus.write(doc_representation)
         vector_corpus.close()
         print('SUCCESS: LDA to Vector completed')
@@ -46,7 +54,7 @@ class LdaOperator:
         SEPARATOR = ','
         for item in lda_doc:
             feat, val = item
-            feature_values += str(val)+SEPARATOR
+            feature_values += str(val) + SEPARATOR
         return feature_values
 
     # Save LDA model
@@ -67,6 +75,3 @@ class LdaOperator:
         except IOError:
             print('ERROR: Cannot Load LDA Model: %s' % lda_name)
             exit()
-
-
-

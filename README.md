@@ -2,11 +2,14 @@
 
 Program that obtains document vector representations by using Topic Modeling* and Latent Dirichlet Allocation 
 
-Requirements: Python +3.5, Gensim, NLTK, and stop_words
+Requirements: Python +3.5, Gensim**, NLTK, and stop_words
 
 Composed by two parts: Train/Load LDA model and Use LDA model to obtain document-vectors
 
 `<files>` should be in the same level as `<default>`
+
+Under `source.py` (`# LDA - Step`) you can control all LDA Hyper-parameters , including if you will run a standard LDA 
+or Multi-core version*** of it
 
 
  #### Command execution examples
@@ -41,3 +44,7 @@ Composed by two parts: Train/Load LDA model and Use LDA model to obtain document
 
 
 *D. Blei et al. http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)
+
+** Gensim-LDA - https://radimrehurek.com/gensim/models/ldamodel.html
+
+*** Multi-core LDA - https://rare-technologies.com/multicore-lda-in-python-from-over-night-to-over-lunch/)
