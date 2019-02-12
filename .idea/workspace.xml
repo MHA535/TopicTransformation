@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="869457c2-b8f0-4b51-8725-476d3de36a25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default/source.py" beforeDir="false" afterPath="$PROJECT_DIR$/default/source.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/ldaTools.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/ldaTools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/textProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/textProcessing.py" afterDir="false" />
     </list>
@@ -28,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utilities/ldaTools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="276">
+              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -38,10 +36,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/models/ldamodel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="359" column="58" selection-start-line="359" selection-start-column="52" selection-end-line="359" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/models/ldamulticore.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1186">
-              <caret line="99" column="6" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
+            <state relative-caret-position="245">
+              <caret line="110" selection-start-line="110" selection-end-line="110" />
             </state>
           </provider>
         </entry>
@@ -58,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/default/source.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            <state relative-caret-position="1155">
+              <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
               <folding>
                 <element signature="e#9#18#0" expanded="true" />
               </folding>
@@ -67,12 +74,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="394">
-                <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+              <first_editor relative-caret-position="1029">
+                <caret line="49" selection-start-line="49" selection-end-line="49" />
               </first_editor>
               <second_editor />
             </state>
@@ -94,11 +101,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utilities/textProcessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+            <state relative-caret-position="326">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/corpora/dictionary.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="819">
+              <caret line="49" column="55" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -127,6 +143,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>rando`</find>
+      <find>update</find>
+      <find>update_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,10 +160,10 @@
         <option value="$PROJECT_DIR$/test_unit/tdd.py" />
         <option value="$PROJECT_DIR$/test_unit/testReading.py" />
         <option value="$PROJECT_DIR$/utilities/commandLine.py" />
-        <option value="$PROJECT_DIR$/utilities/textProcessing.py" />
         <option value="$PROJECT_DIR$/default/source.py" />
-        <option value="$PROJECT_DIR$/utilities/ldaTools.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/utilities/textProcessing.py" />
+        <option value="$PROJECT_DIR$/utilities/ldaTools.py" />
       </list>
     </option>
   </component>
@@ -162,35 +180,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TopicTransformation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TopicTransformation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TopicTransformation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TopicTransformation" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TopicTransformation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TopicTransformation" type="462c0819:PsiDirectoryNode" />
-              <item name="test_unit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TopicTransformation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TopicTransformation" type="462c0819:PsiDirectoryNode" />
-              <item name="utilities" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -320,7 +310,10 @@
       <workItem from="1549473050704" duration="13387000" />
       <workItem from="1549552113177" duration="7238000" />
       <workItem from="1549632008885" duration="1210000" />
-      <workItem from="1549636937860" duration="1654000" />
+      <workItem from="1549636937860" duration="1872000" />
+      <workItem from="1549893229470" duration="599000" />
+      <workItem from="1549923347200" duration="872000" />
+      <workItem from="1549994549516" duration="486000" />
     </task>
     <servers />
   </component>
@@ -357,7 +350,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66349000" />
+    <option name="totallyTimeSpent" value="68524000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -423,13 +416,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/corpora/dictionary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
-          <caret line="248" column="13" selection-start-line="248" selection-start-column="12" selection-end-line="248" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utilities/corpusDoc2Bow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -454,6 +440,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/default/source.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+          <folding>
+            <element signature="e#9#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1029">
+            <caret line="49" selection-start-line="49" selection-end-line="49" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_unit/tdd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
@@ -461,6 +467,13 @@
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/corpora/dictionary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="49" column="55" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -476,48 +489,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utilities/textProcessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+        <state relative-caret-position="326">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/models/ldamulticore.py">
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/models/ldamodel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1186">
-          <caret line="99" column="6" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
+        <state relative-caret-position="371">
+          <caret line="359" column="58" selection-start-line="359" selection-start-column="52" selection-end-line="359" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utilities/ldaTools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="276">
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/default/source.py">
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/models/ldamulticore.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-          <folding>
-            <element signature="e#9#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="394">
-            <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
-          </first_editor>
-          <second_editor />
+        <state relative-caret-position="245">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
         </state>
       </provider>
     </entry>

@@ -36,7 +36,7 @@ class TextParser:
 
     # creates a dictionary of words in a document - one at a time
     def createDictionary(self, input_file, output_file):
-        dictionary = Dictionary()
+        dictionary = Dictionary(prune_at=6000000)
         for line in open(input_file, 'r', encoding='utf-8', errors='ignore'):
             words = self.tokenizeWords(line)
             words = self.removeStopWords(words)

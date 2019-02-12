@@ -12,7 +12,7 @@ class LdaOperator:
                       multi_core=True, worker_num=4):
         if multi_core:
             lda_model = LdaMulticore(corpus=corpus_mm, id2word=dictionary, num_topics=dimensions,
-                                     update_every=update, chunksize=chunks, passes=epochs, random_state=random,
+                                     chunksize=chunks, passes=epochs, random_state=random,
                                      minimum_probability=min_prob, workers=worker_num)
         else:
             lda_model = LdaModel(corpus=corpus_mm, id2word=dictionary, num_topics=dimensions,
