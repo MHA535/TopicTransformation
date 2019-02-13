@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="869457c2-b8f0-4b51-8725-476d3de36a25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/ldaTools.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/ldaTools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/textProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/textProcessing.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,29 +24,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utilities/ldaTools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+            <state relative-caret-position="252">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/models/ldamodel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="359" column="58" selection-start-line="359" selection-start-column="52" selection-end-line="359" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/models/ldamulticore.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="110" selection-start-line="110" selection-end-line="110" />
             </state>
           </provider>
         </entry>
@@ -62,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/default/source.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            <state relative-caret-position="431">
+              <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
               <folding>
                 <element signature="e#9#18#0" expanded="true" />
               </folding>
@@ -101,7 +81,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utilities/textProcessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
+            <state relative-caret-position="819">
               <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -122,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utilities/commandLine.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="987">
-              <caret line="48" column="85" selection-start-line="48" selection-start-column="85" selection-end-line="48" selection-end-column="85" />
+            <state relative-caret-position="294">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -160,18 +140,16 @@
         <option value="$PROJECT_DIR$/test_unit/tdd.py" />
         <option value="$PROJECT_DIR$/test_unit/testReading.py" />
         <option value="$PROJECT_DIR$/utilities/commandLine.py" />
-        <option value="$PROJECT_DIR$/default/source.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/utilities/textProcessing.py" />
         <option value="$PROJECT_DIR$/utilities/ldaTools.py" />
+        <option value="$PROJECT_DIR$/default/source.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="408" />
-    <option name="y" value="94" />
-    <option name="width" value="1920" />
-    <option name="height" value="1020" />
+    <option name="width" value="2590" />
+    <option name="height" value="1470" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -184,6 +162,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
@@ -313,7 +292,9 @@
       <workItem from="1549636937860" duration="1872000" />
       <workItem from="1549893229470" duration="599000" />
       <workItem from="1549923347200" duration="872000" />
-      <workItem from="1549994549516" duration="486000" />
+      <workItem from="1549994549516" duration="1469000" />
+      <workItem from="1550029095539" duration="1510000" />
+      <workItem from="1550077729804" duration="11000" />
     </task>
     <servers />
   </component>
@@ -350,7 +331,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68524000" />
+    <option name="totallyTimeSpent" value="71028000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -363,7 +344,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.14898786" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -385,7 +365,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="5" weight="0.34381664" />
+      <window_info active="true" anchor="right" id="Terminal" order="5" visible="true" weight="0.4048583" />
       <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="6" side_tool="true" weight="0.32995737" />
     </layout>
     <layout-to-restore>
@@ -415,6 +395,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utilities/ldaTools.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/utilities/corpusDoc2Bow.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -433,20 +423,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/models/ldamodel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="359" column="58" selection-start-line="359" selection-start-column="52" selection-end-line="359" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/models/ldamulticore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/ldaTools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utilities/fileOperations.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/default/source.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-          <folding>
-            <element signature="e#9#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -470,6 +474,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/textProcessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/corpora/dictionary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="819">
@@ -479,45 +493,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utilities/commandLine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="48" column="85" selection-start-line="48" selection-start-column="85" selection-end-line="48" selection-end-column="85" />
+        <state relative-caret-position="294">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/textProcessing.py">
+    <entry file="file://$PROJECT_DIR$/default/source.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="431">
+          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#9#18#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/models/ldamodel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="359" column="58" selection-start-line="359" selection-start-column="52" selection-end-line="359" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/ldaTools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/gensim/models/ldamulticore.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
         </state>
       </provider>
     </entry>
