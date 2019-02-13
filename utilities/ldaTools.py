@@ -9,7 +9,7 @@ class LdaOperator:
 
     # trains a lda model
     def trainLDAModel(self, corpus_mm, dictionary, dimensions, update, chunks, epochs, random=None, min_prob=0.01,
-                      multi_core=True, worker_num=4):
+                      multi_core=False, worker_num=3):
         if multi_core:
             lda_model = LdaMulticore(corpus=corpus_mm, id2word=dictionary, num_topics=dimensions,
                                      chunksize=chunks, passes=epochs, random_state=random,

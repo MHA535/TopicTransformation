@@ -53,8 +53,8 @@ if __name__ == '__main__':
         epochs = 1
         random = 1
         min_prob = 0.0  # if default value is used (0.1), topics < min_prob are not presented
-        multi_core = True  # single or multiple cores LDA
-        worker_num = 4  # if running multicore set number of cores
+        multi_core = False  # single or multiple cores LDA
+        worker_num = 3  # if running multicore set number of cores
 
         start_time = time.monotonic()  # overall runtime start
         lda_model = lda_operator.trainLDAModel(corpus_mm, dic, dimensions, update, chunks, epochs, random, min_prob,
