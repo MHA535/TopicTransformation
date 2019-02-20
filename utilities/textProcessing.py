@@ -53,7 +53,7 @@ class TextParser:
             print('IO ERROR: Cannot save corpus %s' % corpus_name)
             exit()
 
-    # Loads corppus in MM format
+    # Loads corpus in MM format
     def loadMMCorpus(self, corpus_path):
         try:
             corpus_mm = corpora.mmcorpus.MmCorpus(corpus_path)

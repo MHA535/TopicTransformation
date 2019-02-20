@@ -35,15 +35,14 @@ if __name__ == '__main__':
     lda_flag = params.lda_flag
     lda_file = os.path.join(ppydir_name, params.lda_model)
     lda_usage = params.lda_use
+    corpus_path = os.path.join(ppydir_name, params.corpus_mm)
 
     if dict_flag:  # Save dictionary and MM
         dic = tp.createDictionary(in_fname, ou_fname)
         corpus_mm = MyCorpus(in_fname, dic)
         tp.createMMCorpus(corpus_mm, params.corpus_mm)
     else:  # Load dictionary and MM
-        corpus_path = os.path.join(ppydir_name, params.corpus_mm)
         dic = tp.loadDictionary(ou_fname)
-        corpus_mm = tp.loadMMCorpus(corpus_path)
 
     # LDA - Step
     if lda_flag:  # LDA Model Train
@@ -54,9 +53,10 @@ if __name__ == '__main__':
         random = 1
         min_prob = 0.0  # if default value is used (0.1), topics < min_prob are not presented
         multi_core = False  # single or multiple cores LDA
-        worker_num = 3  # if running multicore set number of cores
+        worker_num = 3  # if running multi-core set number of cores
 
         start_time = time.monotonic()  # overall runtime start
+        if not dict_flag: corpus_mm = tp.loadMMCorpus(corpus_path)  # loads corpus MM in case LDA Model needs training
         lda_model = lda_operator.trainLDAModel(corpus_mm, dic, dimensions, update, chunks, epochs, random, min_prob,
                                                multi_core, worker_num)
         print('SUCCESS: LDA Model built in %s' % (timedelta(seconds=time.monotonic() - start_time)))

@@ -3,6 +3,7 @@ from gensim.models.ldamulticore import LdaMulticore
 from utilities.textProcessing import TextParser
 from utilities.fileOperations import FileManipulation
 import os
+import numpy
 
 
 class LdaOperator:
@@ -13,11 +14,11 @@ class LdaOperator:
         if multi_core:
             lda_model = LdaMulticore(corpus=corpus_mm, id2word=dictionary, num_topics=dimensions,
                                      chunksize=chunks, passes=epochs, random_state=random,
-                                     minimum_probability=min_prob, workers=worker_num)
+                                     minimum_probability=min_prob, workers=worker_num, alpha='auto', dtype=numpy.float64)
         else:
             lda_model = LdaModel(corpus=corpus_mm, id2word=dictionary, num_topics=dimensions,
                                  update_every=update, chunksize=chunks, passes=epochs, random_state=random,
-                                 minimum_probability=min_prob)
+                                 minimum_probability=min_prob, alpha='auto', dtype=numpy.float64)
         return lda_model
 
     # creates a a file (one-doc-line) based on features from LDA model with label
@@ -75,3 +76,8 @@ class LdaOperator:
         except IOError:
             print('ERROR: Cannot Load LDA Model: %s' % lda_name)
             exit()
+
+    def get_doc_topics(self, lda, bow):
+        gamma, _ = lda.inference([bow])
+        topic_dist = gamma[0] / sum(gamma[0])  # normalize distribution
+        return [(topicid, topicvalue) for topicid, topicvalue in enumerate(topic_dist)]
