@@ -1,6 +1,7 @@
 import argparse
 import distutils.util as util
-
+import csv
+import pandas as pd  # Optional but recommended for handling large CSV files
 
 class CommandLine:
     input_folder = None
@@ -12,6 +13,7 @@ class CommandLine:
     lda_flag = None
     lda_model = None
     lda_use = None
+    csv_file = None  # Add this to store CSV file path
 
     # constructor for parameters
     def __init__(self):
@@ -26,6 +28,11 @@ class CommandLine:
         self.lda_flag = args.lda_flag
         self.lda_model = args.lda_m
         self.lda_use = args.lda_u
+        self.csv_file = args.csv_f  # Capture the CSV file path
+
+        # After parsing arguments, you can now process the CSV file
+        if self.csv_file:
+            self.process_csv()
 
     # parameter list for command line
     def commandLineParameters(self):
@@ -48,4 +55,32 @@ class CommandLine:
                             help='Location for LDA Model to be saved or loaded')
         parser.add_argument('--ldau', type=util.strtobool, action='store', dest='lda_u', metavar='<variable>', required=True,
                             help='[True] - Apply LDA model to documents on --docr. [False] - Exit program', choices=[True, False])
+        # New argument for CSV file
+        parser.add_argument('--csv', type=str, action='store', dest='csv_f', metavar='<file>', required=False,
+                            help='CSV file containing documents with source and page content')
+
         return parser
+
+    # Method to process the CSV file
+    def process_csv(self):
+        try:
+            # Using pandas to read the CSV file
+            df = pd.read_csv(self.csv_file)
+            # Assuming columns are named 'Source' and 'Page_Content'
+            for index, row in df.iterrows():
+                source = row['Source']
+                page_content = row['Page_Content']
+                print(f"Source: {source}, Page Content: {page_content}")
+            
+            # Alternatively, you can use csv module:
+            # with open(self.csv_file, mode='r', encoding='utf-8') as file:
+            #     reader = csv.DictReader(file)
+            #     for row in reader:
+            #         source = row['Source']
+            #         page_content = row['Page_Content']
+            #         print(f"Source: {source}, Page Content: {page_content}")
+        except Exception as e:
+            print(f"Error processing CSV file: {e}")
+
+if __name__ == "__main__":
+    CommandLine()

@@ -7,8 +7,8 @@ from gensim.corpora import Dictionary
 from gensim import corpora
 
 # in case these libraries are not installed
-# nltk.download('punkt')
-# nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('stopwords')
 
 # some definitions
 stopWords = get_stop_words('en')  # list of stopwords/english PyPl
